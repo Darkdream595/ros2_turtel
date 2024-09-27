@@ -72,7 +72,7 @@ void Control::run()
     publish_move_callback();
     std::this_thread::sleep_for(std::chrono::seconds(3));
     count++;
-    while (count <= 12)
+    while (count <= 11)
     {
         if (count % 2 != 0)
         {
