@@ -21,6 +21,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
 
 file(GLOB_RECURSE CPP_SOURCE_FILES src/*.*) 
 
@@ -40,7 +42,9 @@ ament_package()
 add_executable(turtel_control_node ${CPP_SOURCE_FILES})
 ament_target_dependencies(turtel_control_node 
     rclcpp
-    geometry_msgs  # 确保添加这一行
+    geometry_msgs
+    tf2
+    tf2_ros  # 确保添加这一行
 )
 
 install(TARGETS
